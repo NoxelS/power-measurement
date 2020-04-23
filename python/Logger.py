@@ -194,14 +194,7 @@ with open(PATH, "a") as file:
         time.sleep(TIME_INTERVAL / 1000)
 
 except KeyboardInterrupt:
-    # here you put any code you want to run before the program
-    # exits when you press CTRL+C
     GPIO.cleanup()
 
-# except:
-    # this catches ALL other exceptions including errors.
-    # You won't get any error messages for debugging
-    # so only use it once your code is working
-#    GPIO.cleanup()
-
-GPIO.cleanup()
+except:
+    GPIO.cleanup()
