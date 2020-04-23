@@ -12,7 +12,7 @@ from datetime import datetime
 import RPi.GPIO as GPIO
 
 # * Disable GPIO Debug
-GPIO.setwarning(False);
+GPIO.setwarnings(False);
 
 # * Initialisierung
 GPIO.setmode(GPIO.BCM)
