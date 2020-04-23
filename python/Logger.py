@@ -11,6 +11,9 @@ from mcp3008 import *
 from datetime import datetime
 import RPi.GPIO as GPIO
 
+# * Disable GPIO Debug
+GPIO.setwarning(False);
+
 # * Initialisierung
 GPIO.setmode(GPIO.BCM)
 mcp = MCP3008()
