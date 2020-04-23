@@ -10,6 +10,15 @@ from timeit import default_timer as timer
 from mcp3008 import *
 from datetime import datetime
 import RPi.GPIO as GPIO
+import signal
+
+# * Cleaning up
+def keyboardInterruptHandler(signal, frame):
+    GPIO.cleanup()
+    print("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+    exit(0)
+
+signal.signal(signal.SIGINT, keyboardInterruptHandler)
 
 # * Disable GPIO Debug
 GPIO.setwarnings(False)
@@ -192,9 +201,3 @@ with open(PATH, "a") as file:
                 time.sleep(TIME_INTERVAL / 1000)
     if TIME_INTERVAL != 0:
         time.sleep(TIME_INTERVAL / 1000)
-
-except KeyboardInterrupt:
-    GPIO.cleanup()
-
-except:
-    GPIO.cleanup()
