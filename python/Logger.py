@@ -14,6 +14,9 @@ import RPi.GPIO as GPIO
 # * Disable GPIO Debug
 GPIO.setwarnings(False);
 
+# * Debug
+print("Starting script...")
+
 # * Initialisierung
 GPIO.setmode(GPIO.BCM)
 mcp = MCP3008()
