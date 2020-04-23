@@ -15,7 +15,7 @@ import signal
 # * Cleaning up
 def keyboardInterruptHandler(signal, frame):
     GPIO.cleanup()
-    print("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+    print("Script exiting...".format(signal))
     exit(0)
 
 signal.signal(signal.SIGINT, keyboardInterruptHandler)
