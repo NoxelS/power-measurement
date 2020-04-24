@@ -162,7 +162,7 @@ with open(PATH, "a") as file:
         time_now = 0
 
         while start:
-
+            time.sleep(TIME_INTERVAL / 1000)
             dateTimeObj = datetime.now()
             date_now = dateTimeObj.strftime("%m/%d/%Y")
             time_now = dateTimeObj.strftime("%H:%M:%S.%f")
@@ -197,7 +197,3 @@ with open(PATH, "a") as file:
                     "channel": str(kanal)
                 }, file, PATH)
 
-            if TIME_INTERVAL != 0:
-                time.sleep(TIME_INTERVAL / 1000)
-    if TIME_INTERVAL != 0:
-        time.sleep(TIME_INTERVAL / 1000)
