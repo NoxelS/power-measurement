@@ -148,6 +148,7 @@ updateLED()
 
 # * Erzeugt eine neue seed-spezifische File
 if not os.path.exists(PATH):
+    time.sleep(0.1)
     f = open(PATH, "w")
     f.write("#"+str(SEED)+"-"+str(TODAY)+"\n")
     f.close()
@@ -180,13 +181,13 @@ with open(PATH, "a") as file:
                     "time": str(time_now),
                     "channel": str(kanal)
                 }, file, PATH)
-
+                time.sleep(0.1)
             if HFW59D:
                 kanal = 2
                 analog_value = mcp.analog_read(HFW59D_CHANNEL)
                 voltage = 2.47 * analog_value / 1024
                 power = voltage * 1000
-
+                time.sleep(0.1)
                 # ! Schreibt die Daten in die File
                 writeToVPDFile({
                     "power": str(round(power, 5)),
