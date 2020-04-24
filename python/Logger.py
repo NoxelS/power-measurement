@@ -162,7 +162,6 @@ with open(PATH, "a") as file:
         time_now = 0
 
         while start:
-            time.sleep(0.1)
             dateTimeObj = datetime.now()
             date_now = dateTimeObj.strftime("%m/%d/%Y")
             time_now = dateTimeObj.strftime("%H:%M:%S.%f")
@@ -196,4 +195,5 @@ with open(PATH, "a") as file:
                     "time": str(time_now),
                     "channel": str(kanal)
                 }, file, PATH)
+            time.sleep(0.1)
 
