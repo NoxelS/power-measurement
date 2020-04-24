@@ -1,0 +1,28 @@
+<mat-card class="card round">
+  <mat-toolbar class="round" color="primary">
+    <span
+      >{{ title }} <small color="accent">{{ seed }}</small></span
+    >
+    <span class="full-flex"></span>
+    <span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </span>
+  </mat-toolbar>
+  <div class="card-content">
+    <mat-card-content>
+      <span *ngIf="!fileUploaded">
+        <h3>Lade eine Datei hoch...</h3>
+        <input type="file" name="file" id="file" (change)="onFileInput($event)" />
+      </span>
+      <span *ngIf="fileUploaded"><app-data-chart [data]="data" [labels]="labels"></app-data-chart></span>
+    </mat-card-content>
+  </div>
+</mat-card>

@@ -1,1 +1,24 @@
-<h1>Test Feature Branch</h1>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Power Measurement</span>
+    <span class="full-flex"></span>
+    <mat-icon class="icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+    <mat-icon class="icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+
+<div class="container"><router-outlet></router-outlet></div>
