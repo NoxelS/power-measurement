@@ -162,7 +162,7 @@ with open(PATH, "a") as file:
         time_now = 0
 
         while start:
-            time.sleep(TIME_INTERVAL / 1000)
+            time.sleep(0.1)
             dateTimeObj = datetime.now()
             date_now = dateTimeObj.strftime("%m/%d/%Y")
             time_now = dateTimeObj.strftime("%H:%M:%S.%f")
