@@ -30,7 +30,7 @@ export class DataAnalysisComponent implements OnInit {
     const fileReader = new FileReader();
     fileReader.onload = (e) => {
       this.rawFileString = fileReader.result as string;
-      this.fileLines = this.rawFileString.split('\r\n');
+      this.fileLines = this.rawFileString.split(/\r\n/g);
       this.title = `Messung vom ${this.fileLines[0]
         .split('-')
         .slice(1, 4)
